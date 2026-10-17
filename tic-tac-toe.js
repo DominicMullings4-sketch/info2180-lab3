@@ -16,6 +16,14 @@ squares.forEach(function (square, index) {
             gameState[index] = currentTile;
             currentTile = currentTile === "X" ? "O" : "X";
     });
+
+    square.addEventListener("mouseover", function(){
+        square.classList.add("hover");
+    });
+
+    square.addEventListener("mouseout", function(){
+        square.classList.remove("hover");
+    });
  });
 
 });
