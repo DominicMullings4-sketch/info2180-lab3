@@ -15,6 +15,7 @@ const theWinningCombinations = [
     [2,4,6]
 ];
 let gameOver = false;
+const newGame = document.querySelector(".btn");
 
 squares.forEach(function (square, index) {
     square.classList.add("square")
@@ -59,6 +60,19 @@ squares.forEach(function (square, index) {
     });
  });
 
+    newGame.addEventListener("click", function(){
+        squares.forEach(function (square, index) {
+            gameState[index] = null;
+            square.textContent = "";
+            square.classList.remove("hover");
+            square.classList.remove("X");
+            square.classList.remove("O");
+        });
+        currentTile = "X";
+        gameOver = false;
+        winner.textContent = "Move your mouse over a square and click to play an X or an O.";
+        winner.classList.remove("you-won");
+    });
 });
 
 
